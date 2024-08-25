@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPLE NOTES</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="shortcut icon" href="assets/favicon/images.ico" type="image/x-icon">
+    <!--Kits de icon do fontawesome-->
+    <script src="https://kit.fontawesome.com/be1dd7c1bf.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!--Header para dispositivos móveis-->
+    <header class="mobileHeader">
+        <div class="headerButtons" id="openHeaderArea">
+            <button id="openSidebar">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!--Container principal-->
+    <main class="mainContainer">
+        <!--Container da barra lateral-->
+        <div class="sidebarPlaceholder">
+            <div class="sidebarContainer" id="sidebar">
+                <div class="sidebarButtons" id="closeHeaderArea">
+                    <button id="closeSidebar">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
+                </div>
+                <h3>Áreas de trabalho</h3>
+                <div class="desktopsList">
+                    <ul class="desktops">
+                        <li class="desktopsActive" id="desktop1">Notas sem título</li>
+                        <li>Aprendendo typescript</li>
+                        <li>Anotações da aula do dia 23/08</li>
+                    </ul>
+                </div>
+                <button class="newDesktop" disabled>Novo desktop</button>
+            </div>
+        </div>
+
+        <!--Container de conteúdo, onde as notas serão criadas e exibidas-->
+        <div class="contentContainer">
+            <form class="titleForm">
+                <input type="text" id="titleForm1" name="titleForm" placeholder="Escreva o título" maxlength="25"
+                    autocomplete="off">
+            </form>
+            <!--Container onde as notas seão exibidas-->
+            <div class="cardsContainer">
+                <div class="display" id="displayArea">
+                </div>
+            </div>
+            <!--Container onde as notas serão criadas-->
+            <div class="typerArea">
+                <form class="actionForm" id="formMain">
+
+                    <textarea name="textAreaElementMain" id="textAreaElementMain" class="textAreaElement" rows="1"
+                        cols="45" maxlength="270" placeholder="Escreva sua nota"></textarea>
+
+                    <button type="button" id="submit" disabled><i class="fa-solid fa-circle-arrow-up"></i></button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script/app.js"></script>
+</body>
+
+</html>

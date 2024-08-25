@@ -1,0 +1,367 @@
+*{
+    margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+
+/*Variáveis de personalização*/
+:root{
+    --textAreaBackground: rgb(218, 218, 218);
+    --bodyBackgroundColor: rgb(238, 238, 238); 
+    --sidebarBackgroundColor: rgb(226, 226, 226);
+    --selectionColor: rgb(207, 207, 207);
+    --fontColor: #2b2b2b;
+    --secondaryFontColor: rgb(128, 128, 128);
+    --border: 1px solid #d4d4d4;
+    --fontFamily: "Inter", sans-serif;
+    --primaryColorLight: rgb(209, 207, 240);
+    --primaryColorDark: rgb(6, 0, 41);
+}
+
+/*MAIN STYLE*/
+
+body{
+    color: var(--fontColor);
+    font-family: var(--fontFamily);
+    background-color: var(--bodyBackgroundColor);
+}
+
+
+/*Estilização de containers e titulo*/
+.mainContainer {
+    display: flex;
+}
+
+.contentContainer{
+    width: 950px;
+    margin-top: 50px !important;
+    margin: 0 auto;
+    height: fit-content;
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contentContainer > .titleForm, .titleForm  > input{
+    background-color: transparent;
+    align-self: flex-start;
+    border: none;
+    font-size: 54px;
+    font-weight: 600;
+    color: var(--secondaryFontColor);
+}
+
+.contentContainer > .titleForm > input:focus, input::placeholder{
+    outline: none;
+    background-color: transparent;
+    align-self: flex-start;
+    border: none;
+    font-size: 54px;
+    font-weight: 600;
+    color: var(--secondaryFontColor);
+}
+
+.cardsContainer {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+
+/*Estilização da barra lateral*/
+#openSidebar, #closeSidebar{
+    display: none;
+}
+
+.sidebarContainer{
+    border-right: var(--border);
+    position: fixed;
+    width: 200px;
+    background-color: var(--sidebarBackgroundColor);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+} 
+
+.sidebarPlaceholder{
+    width: 200px;
+    z-index: 2;
+}
+
+.sidebarContainer > h3 {
+    margin-top: 30px;
+    font-weight: 500;
+    color: var(--secondaryFontColor);
+}
+
+.desktops {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.desktopsActive {
+    background-color: var(--selectionColor);
+}
+
+.desktops > li:hover{
+    background-color: var(--selectionColor);
+}
+
+.desktops > li {
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 5px;
+    width: 150px;
+    font-size: 14px;
+    list-style: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-bottom: 5px;
+}
+
+.newDesktop {
+    margin-top: auto;
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 150px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: var(--primaryColorLight);
+    color: var(--primaryColorDark);
+    cursor: pointer;
+}
+
+.newDesktop:disabled{
+    opacity: 50%;
+    cursor:not-allowed;
+}
+
+/*Estilização da area de digitação para criação de notas e do botão de envio*/
+
+.typerArea {
+    width: 500px;
+    position: relative;
+}
+
+.typerArea > form{
+    border: var(--border);
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--textAreaBackground);
+    margin-bottom: 20px;
+}
+
+.typerArea > form > textarea {
+    font-family: var(--fontFamily);
+    margin-right: 10px;
+    color: var(--fontColor);
+    font-size: 18px;
+    margin-left: 10px;
+    border: none;
+    background-color: var(--textAreaBackground);
+    outline: none;
+}
+
+.typerArea > form > textarea::-webkit-scrollbar {
+    width: 10px;
+}
+
+.typerArea > form > textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.typerArea > form > textarea::-webkit-scrollbar-thumb {
+    background: rgb(126, 126, 126);
+    border-radius: 10px;
+    cursor: auto;
+}
+
+#submit {
+    color: var(--fontColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    align-self: flex-end;
+} 
+
+#submit:disabled {
+    color: var(--fontColor);
+    opacity: 50%;
+    cursor:auto;
+}
+
+.textAreaElement {
+    resize:none;
+}
+
+/*Exibição e estilização das notas e botões das mesmas*/
+
+.display {
+    width: fit-content;
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    place-items: center;
+}
+
+.note {
+    width: 270px;
+    height: 270px;
+    border-radius: 10px;
+    padding: 20px;
+    color: var(--primaryColorDark);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primaryColorLight);
+}
+
+.note > p {
+    display: -webkit-box;
+    line-clamp: 10;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-overflow: clip;
+    text-wrap: wrap;
+    line-height: 1.2em; 
+    font-size: 18px;
+}
+
+
+.trashArea {
+    margin-top: auto;
+    align-self: flex-end;
+}
+
+.trashIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background-color: var(--primaryColorDark);
+    color: var(--primaryColorLight);
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+/*Media queries*/
+
+@media(max-width:1180px){
+    .display {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .contentContainer, .titleForm > input {
+        width: 630px;
+    }
+    .sidebarContainer{
+        display: flex;
+    }
+}
+
+@media(max-width: 993px){
+   .sidebarPlaceholder{
+    width: 0px;
+    }
+
+    .sidebarContainer {
+        display: none;
+    }
+    .headerButtons{
+        margin: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    /*Estilização dos botões da sidebar para dispositivos móveis*/
+
+    .sidebarButtons {
+        width: 80%;
+        margin: 20px;
+        display: flex;
+        align-items: left;    
+    }
+
+    #openSidebar, #closeSidebar {
+        display: block;
+        font-size: 22px;
+        background-color: transparent;
+        color: var(--fontColor);
+    }
+    
+    .newDesktop{
+        margin-top: 30px;
+    }
+}
+
+@media(max-width: 750px){
+    .contentContainer, .titleForm > input {
+        width: 430px;
+    }
+    .display {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .contentContainer > .titleForm, .titleForm  > input{
+        font-size: 44px;
+    }
+    
+    .contentContainer > .titleForm > input:focus, input::placeholder{
+        font-size: 44px;
+    }
+    .typerArea{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #formMain{
+        width: 300px;
+    }
+}
+
+@media(max-width: 500px){
+    .contentContainer, .titleForm > input {
+        width: 330px;
+    }
+
+    .contentContainer > .titleForm, .titleForm  > input{
+        font-size: 34px;
+    }
+    
+    .contentContainer > .titleForm > input:focus, input::placeholder{
+        font-size: 34px;
+    }
+}
+
+/*VISIBILITY*/
+
+.visible{
+    display: block;
+}
+
+.hidden{
+    display: none;
+}

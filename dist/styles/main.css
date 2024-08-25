@@ -266,6 +266,12 @@ body{
     width: 35px;
     cursor: pointer;
     border-radius: 100px;
+    opacity: 70%;
+    transition: 0.2s;
+}
+
+.trashIcon:hover{
+    opacity: 100%;
 }
 
 /*Media queries*/

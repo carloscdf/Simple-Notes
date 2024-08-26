@@ -16,7 +16,7 @@ Foi utilizado HTML para a estruturação, CSS para a estilização e TypeScript 
 ### Melhorias futuras
 * Possibilidade de criar áreas de trabalhos;
 * Áreas de trabalho com notas temporizadas personalizados pelo o usuário para que suma em um período de tempo, possibilitando o foco do usuário;
-* Possibilidade de personalização das cores e texto das notas ja criadas;
+* Possibilidade de personalização das cores, texto e fonte das notas ja criadas;
 * Possibilidade de adicionar mais elementos nas notas como títulos, listas, imagens, links, vídeos e etc;
 * Melhorias no layout e design da página;
 * Notas com tamanhos personalizados de acordo com quantidade do seu conteúdo;

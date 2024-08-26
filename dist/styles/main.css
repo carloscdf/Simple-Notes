@@ -7,16 +7,16 @@
 
 /*Variáveis de personalização*/
 :root{
-    --textAreaBackground: rgb(218, 218, 218);
-    --bodyBackgroundColor: rgb(238, 238, 238); 
-    --sidebarBackgroundColor: rgb(226, 226, 226);
-    --selectionColor: rgb(207, 207, 207);
-    --fontColor: #2b2b2b;
-    --secondaryFontColor: rgb(128, 128, 128);
-    --border: 1px solid #d4d4d4;
+    --textAreaBackground: rgb(22, 22, 22);
+    --bodyBackgroundColor: rgb(12, 12, 12); 
+    --sidebarBackgroundColor: rgb(17, 17, 17);
+    --selectionColor: rgb(31, 31, 31);
+    --fontColor: #f1f1f1;
+    --secondaryFontColor: rgb(80, 80, 80);
+    --border: 1px solid #0f0f0f;
     --fontFamily: "Inter", sans-serif;
-    --primaryColorLight: rgb(209, 207, 240);
-    --primaryColorDark: rgb(6, 0, 41);
+    --primaryColorLight: rgb(253, 236, 202);
+    --primaryColorDark: rgb(41, 34, 0);
 }
 
 /*MAIN STYLE*/
